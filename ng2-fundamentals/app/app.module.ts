@@ -6,7 +6,6 @@ import { ToastrService } from "./common/toastr.service"
 import { appRoutes } from './routes'
 import { RouterModule } from "@angular/router";
 import { Error404Component } from "./errors/404.component";
-
 import {
     EventsListComponent,
     EventDetailsComponent,
@@ -15,14 +14,29 @@ import {
     EventListResolver,
     EventThumbnailComponent,
     CreateSessionComponent,
-    EventService
+    EventService,
+    SessionListComponent
 } from './events/index'
 import { AuthService } from "./user/auth.service";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CollapsibleWellComponent } from "./common/collapsible-well.component";
+import { DurationPipe } from "./events/shared/duration.pipe";
 
 @NgModule({
    imports: [BrowserModule, FormsModule, ReactiveFormsModule, RouterModule.forRoot(appRoutes)],
-   declarations: [EventsAppComponent, EventsListComponent, EventThumbnailComponent, NavBarComponent, EventDetailsComponent, CreateEventComponent, Error404Component, CreateSessionComponent],
+   declarations: [
+       EventsAppComponent,
+       EventsListComponent,
+       EventThumbnailComponent,
+       NavBarComponent,
+       EventDetailsComponent,
+       CreateEventComponent,
+       Error404Component,
+       CreateSessionComponent,
+       SessionListComponent,
+       CollapsibleWellComponent,
+       DurationPipe
+   ],
    bootstrap: [EventsAppComponent],
    providers: [
        EventService,
